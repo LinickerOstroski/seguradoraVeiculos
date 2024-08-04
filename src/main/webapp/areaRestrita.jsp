@@ -13,6 +13,11 @@
                 <!-- <li><a href="${pageContext.request.contextPath}${URL_BASE}/FuncionarioControlador?opcao=cancelar">Funcionário</a></li> -->
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/VeiculoControlador?opcao=cancelar">Veículo</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguradoraControlador?opcao=cancelar">Seguradora</a></li>
+                <li><a href="${pageContext.request.contextPath}${URL_BASE}/AssistenciaControlador?opcao=cancelar">Assistência</a></li>
+                
+                
+                
+                
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/LogoutControlador">Logout</a></li>
             </ul>
         </nav>

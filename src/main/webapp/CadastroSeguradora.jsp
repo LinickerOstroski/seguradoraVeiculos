@@ -30,13 +30,13 @@
                 <p><label>Endereco:</label> <input type="text" name="enderecoSeguradora" value="${enderecoSeguradora}" size="40" /> </p>
                 <p><label>Telefone:</label> <input type="text" name="telefoneSeguradora" value="${telefoneSeguradora}" size="40" /> </p>
                 <p><label>Email:</label> <input type="text" name="emailSeguradora" value="${emailSeguradora}" size="40" /> </p>
-                
+
                 <td> 
                     <input type="submit" name="Salvar" value="Salvar"  /> 
                 </td>
             </form>
-          
-                
+
+
             <form name="cancelarForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoraControlador" method="get">
                 <input type="hidden" name="opcao" value="cancelar" />
                 <input type="submit" name="Cancelar" value="Cancelar" />
@@ -79,7 +79,7 @@
                     <td>${seguradora.enderecoSeguradora}</td>
                     <td>${seguradora.telefoneSeguradora}</td>
                     <td>${seguradora.emailSeguradora}</td>
-                    
+
                     <td>
                         <form name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoraControlador" method="get">
                             <input type="hidden" name="idSeguradora" value="${seguradora.idSeguradora}" >
