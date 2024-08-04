@@ -16,15 +16,16 @@
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/AssistenciaControlador?opcao=cancelar">Assistência</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/FormularioSeguradoControlador?opcao=cancelar">Formulário Segurado</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/BonusControlador?opcao=cancelar">Bônus</a></li>
-                
-                
-                
-                
+                <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador?opcao=cancelar">Segurado</a></li>
+
+
+
+
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/LogoutControlador">Logout</a></li>
             </ul>
         </nav>
-            
-                    <h1>Área restrita do sistema, cadastros</h1>
-                    
+
+        <h1>Área restrita do sistema, cadastros</h1>
+
     </body>
 </html>

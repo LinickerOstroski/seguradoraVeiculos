@@ -29,7 +29,7 @@ public class BonusDao extends GenericoDao<Bonus> {
         return buscarPorId(select, new BonusRowMapper(), id);
     }
 
-    public List<Bonus> buscarTodas() {
+    public List<Bonus> buscarTodos() {
         String select = "SELECT * FROM BONUS";
         return buscarTodos(select, new BonusRowMapper());
     }

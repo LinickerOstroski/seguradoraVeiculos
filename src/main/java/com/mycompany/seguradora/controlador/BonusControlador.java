@@ -138,7 +138,7 @@ public class BonusControlador extends HttpServlet {
     }
 
     private void encaminharParaPagina(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Bonus> bonusList = bonusDao.buscarTodas();
+        List<Bonus> bonusList = bonusDao.buscarTodos();
         request.setAttribute("bonus", bonusList);
         request.setAttribute(opcao, opcao);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroBonus.jsp");
