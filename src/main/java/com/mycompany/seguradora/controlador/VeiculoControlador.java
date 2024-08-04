@@ -210,7 +210,7 @@ public class VeiculoControlador extends HttpServlet {
         List<Veiculo> veiculos = veiculoDao.buscarTodas();
         request.setAttribute("veiculos", veiculos);
         request.setAttribute(opcao, opcao);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/CadastroVeiculo.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroVeiculo.jsp");
         dispatcher.forward(request, response);
 
     }

@@ -145,7 +145,7 @@ public class FuncionarioControlador extends HttpServlet {
         List<Funcionario> funcionarios = funcionarioDao.buscarTodas();
         request.setAttribute("funcionarios", funcionarios);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/CadastroFuncionario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroFuncionario.jsp");
         dispatcher.forward(request, response);
 
     }

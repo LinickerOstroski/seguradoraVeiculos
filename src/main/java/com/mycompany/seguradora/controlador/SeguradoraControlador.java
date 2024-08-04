@@ -162,7 +162,7 @@ public class SeguradoraControlador extends HttpServlet {
         List<Seguradora> seguradoras = seguradoraDao.buscarTodas();
         request.setAttribute("seguradoras", seguradoras);
         request.setAttribute(opcao, opcao);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/CadastroSeguradora.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroSeguradora.jsp");
         dispatcher.forward(request, response);
 
     }

@@ -22,7 +22,6 @@
                 <input type="hidden" name="idAssistencia" value="${idAssistencia}" />
                 <p><label>Tipo:</label> <input type="text" name="tipoAssistencia" value="${tipoAssistencia}" size="40" /> </p>
                 <p><label>Descrição:</label> <input type="text" name="descricaoAssistencia" value="${descricaoAssistencia}" size="40" /> </p>
-
                 <td>
                     <input type="submit" name="Salvar" value="Salvar" />
                 </td>
@@ -33,10 +32,6 @@
                 <input type="submit" name="Cancelar" value="Cancelar" />
             </form>
 
-            <form name="listarForm" action="${pageContext.request.contextPath}${URL_BASE}/AssistenciaControlador" method="get">
-                <input type="hidden" name="opcao" value="listar" />
-                <input type="submit" name="Listar" value="Listar" />
-            </form>
         </div>
         ${mensagem}
 

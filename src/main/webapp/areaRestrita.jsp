@@ -14,6 +14,8 @@
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/VeiculoControlador?opcao=cancelar">Veículo</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguradoraControlador?opcao=cancelar">Seguradora</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/AssistenciaControlador?opcao=cancelar">Assistência</a></li>
+                <li><a href="${pageContext.request.contextPath}${URL_BASE}/FormularioSeguradoControlador?opcao=cancelar">Formulário Segurado</a></li>
+                <li><a href="${pageContext.request.contextPath}${URL_BASE}/BonusControlador?opcao=cancelar">Bônus</a></li>
                 
                 
                 

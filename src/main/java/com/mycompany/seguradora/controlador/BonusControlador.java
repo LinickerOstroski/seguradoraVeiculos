@@ -1,7 +1,7 @@
 package com.mycompany.seguradora.controlador;
 
-import com.mycompany.seguradora.modelo.dao.AssistenciaDao;
-import com.mycompany.seguradora.modelo.entidade.Assistencia;
+import com.mycompany.seguradora.modelo.dao.BonusDao;
+import com.mycompany.seguradora.modelo.entidade.Bonus;
 import com.mycompany.seguradora.servico.WebConstantes;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -12,30 +12,30 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(WebConstantes.BASE_PATH + "/AssistenciaControlador")
-public class AssistenciaControlador extends HttpServlet {
+@WebServlet(WebConstantes.BASE_PATH + "/BonusControlador")
+public class BonusControlador extends HttpServlet {
 
-    private AssistenciaDao assistenciaDao;
-    private Assistencia assistencia;
-    String idAssistencia = "";
-    String tipoAssistencia = "";
-    String descricaoAssistencia = "";
+    private BonusDao bonusDao;
+    private Bonus bonus;
+    String idBonus = "";
+    String valorBonus = "";
+    String descricaoBonus = "";
 
     String opcao = "";
 
     @Override
     public void init() throws ServletException {
-        assistenciaDao = new AssistenciaDao();
-        assistencia = new Assistencia();
+        bonusDao = new BonusDao();
+        bonus = new Bonus();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             opcao = request.getParameter("opcao");
-            idAssistencia = request.getParameter("idAssistencia");
-            tipoAssistencia = request.getParameter("tipoAssistencia");
-            descricaoAssistencia = request.getParameter("descricaoAssistencia");
+            idBonus = request.getParameter("idBonus");
+            valorBonus = request.getParameter("valorBonus");
+            descricaoBonus = request.getParameter("descricaoBonus");
 
             if (opcao == null || opcao.isEmpty()) {
                 opcao = "cadastrar";
@@ -72,18 +72,23 @@ public class AssistenciaControlador extends HttpServlet {
 
     private void cadastrar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         validaCampos();
-        assistencia.setTipoAssistencia(tipoAssistencia);
-        assistencia.setDescricao(descricaoAssistencia);
+        bonus.setValorBonus(Double.parseDouble(valorBonus));
+        bonus.setDescricaoBonus(descricaoBonus);
 
-        assistenciaDao.salvar(assistencia);
+        try {
+            bonusDao.salvar(bonus);
+        } catch (Exception e) {
+            throw new ServletException("Erro ao cadastrar bônus: " + e.getMessage(), e);
+        }
+
         encaminharParaPagina(request, response);
     }
 
     private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("idAssistencia", idAssistencia);
+        request.setAttribute("idBonus", idBonus);
         request.setAttribute("opcao", "confirmarEditar");
-        request.setAttribute("tipoAssistencia", tipoAssistencia);
-        request.setAttribute("descricaoAssistencia", descricaoAssistencia);
+        request.setAttribute("valorBonus", valorBonus);
+        request.setAttribute("descricaoBonus", descricaoBonus);
 
         request.setAttribute("mensagem", "Edite os dados e clique em salvar");
 
@@ -91,68 +96,62 @@ public class AssistenciaControlador extends HttpServlet {
     }
 
     private void excluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("idAssistencia", idAssistencia);
+        request.setAttribute("idBonus", idBonus);
         request.setAttribute("opcao", "confirmarExcluir");
-        request.setAttribute("tipoAssistencia", tipoAssistencia);
-        request.setAttribute("descricaoAssistencia", descricaoAssistencia);
+        request.setAttribute("valorBonus", valorBonus);
+        request.setAttribute("descricaoBonus", descricaoBonus);
         request.setAttribute("mensagem", "Clique em salvar para confirmar a exclusão dos dados");
         encaminharParaPagina(request, response);
     }
 
     private void confirmarEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            validaCampos(); // Valida os campos recebidos
+            validaCampos();
 
-            // Criação e configuração do objeto Assistencia
-            Assistencia assistencia1 = new Assistencia();
-            assistencia1.setIdAssistencia(parseInt(request.getParameter("idAssistencia")));
-            assistencia1.setTipoAssistencia(request.getParameter("tipoAssistencia"));
-            assistencia1.setDescricao(request.getParameter("descricaoAssistencia"));
+            Bonus bonus1 = new Bonus();
+            bonus1.setIdBonus(parseInt(request.getParameter("idBonus")));
+            bonus1.setValorBonus(Double.parseDouble(request.getParameter("valorBonus")));
+            bonus1.setDescricaoBonus(request.getParameter("descricaoBonus"));
 
-            // Atualização da assistência no banco de dados
-            assistenciaDao.alterar(assistencia1);
+            bonusDao.alterar(bonus1);
 
-            // Redireciona para o método cancelar após a atualização
             cancelar(request, response);
         } catch (IllegalArgumentException e) {
-            // Trata erros relacionados à validação de campos
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Erro na validação dos campos: " + e.getMessage());
         } catch (Exception e) {
-            // Trata outros erros inesperados
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Erro inesperado: " + e.getMessage());
         }
     }
 
-    // Método auxiliar para conversão de String para int
-    private int parseInt(String value) {
-        return (value != null && !value.isEmpty()) ? Integer.parseInt(value) : 0;
-    }
-
     private void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        assistencia.setIdAssistencia(Integer.valueOf(request.getParameter("idAssistencia")));
-        assistenciaDao.excluir(assistencia);
+        bonus.setIdBonus(Integer.valueOf(request.getParameter("idBonus")));
+        bonusDao.excluir(bonus);
         cancelar(request, response);
     }
 
     private void cancelar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("idAssistencia", "0");
+        request.setAttribute("idBonus", "0");
         request.setAttribute("opcao", "cadastrar");
-        request.setAttribute("tipoAssistencia", "");
-        request.setAttribute("descricaoAssistencia", "");
+        request.setAttribute("valorBonus", "");
+        request.setAttribute("descricaoBonus", "");
         encaminharParaPagina(request, response);
     }
 
     private void encaminharParaPagina(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Assistencia> assistencias = assistenciaDao.buscarTodas();
-        request.setAttribute("assistencias", assistencias);
+        List<Bonus> bonusList = bonusDao.buscarTodas();
+        request.setAttribute("bonus", bonusList);
         request.setAttribute(opcao, opcao);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroAssistencia.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroBonus.jsp");
         dispatcher.forward(request, response);
     }
 
     public void validaCampos() {
-        if (tipoAssistencia == null || tipoAssistencia.isEmpty() || descricaoAssistencia == null || descricaoAssistencia.isEmpty()) {
+        if (valorBonus == null || valorBonus.isEmpty() || descricaoBonus == null || descricaoBonus.isEmpty()) {
             throw new IllegalArgumentException("Um ou mais parâmetros estão ausentes");
         }
+    }
+
+    private int parseInt(String value) {
+        return (value != null && !value.isEmpty()) ? Integer.parseInt(value) : 0;
     }
 }

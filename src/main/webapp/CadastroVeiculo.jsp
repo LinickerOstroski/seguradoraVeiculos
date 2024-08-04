@@ -45,10 +45,7 @@
                 <input type="submit" name="Cancelar" value="Cancelar" />
             </form>
 
-            <form name="listarForm" action="${pageContext.request.contextPath}${URL_BASE}/VeiculoControlador" method="get">
-                <input type="hidden" name="opcao" value="listar" />
-                <input type="submit" name="Listar" value="Listar" />
-            </form>
+        
         </div>
         ${mensagem}
 
