@@ -17,6 +17,7 @@
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/FormularioSeguradoControlador?opcao=cancelar">Formulário Segurado</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/BonusControlador?opcao=cancelar">Bônus</a></li>
                 <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador?opcao=cancelar">Segurado</a></li>
+                <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguroControlador?opcao=cancelar">Seguro</a></li>
 
 
 

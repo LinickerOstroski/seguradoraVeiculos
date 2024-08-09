@@ -25,12 +25,16 @@
             <p><label>Nome:</label> <input type="text" name="nomeFormularioSegurado" value="${nomeFormularioSegurado}" size="40" /> </p>
             <p><label>Email:</label> <input type="text" name="emailFormularioSegurado" value="${emailFormularioSegurado}" size="40" /> </p>
             <p><label>Telefone:</label> <input type="text" name="telefoneFormularioSegurado" value="${telefoneFormularioSegurado}" size="40" /> </p>
-            <p><input type="button" value="Salvar" onclick="submitForm('confirmarEditar')" /></p>
+            <td> 
+                    <input type="submit" value="Salvar" name="Salvar"  /> 
+            </td>
         </form>
 
         <form name="cancelarForm" action="${pageContext.request.contextPath}${URL_BASE}/FormularioSeguradoControlador" method="get">
-            <input type="hidden" name="opcao" value="cancelar" />
-            <input type="submit" name="Cancelar" value="Cancelar" />
+            <td>
+                    <input type="submit" value="Cancelar" name="Cancelar"  />
+                </td>
+                <input type="hidden" name="opcao" value="cancelar" />
         </form>
     </div>
     ${mensagem}

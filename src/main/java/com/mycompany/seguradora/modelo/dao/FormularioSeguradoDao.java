@@ -14,7 +14,7 @@ public class FormularioSeguradoDao extends GenericoDao<FormularioSegurado> {
 
     public void alterar(FormularioSegurado f) {
         String update = "UPDATE FORMULARIOSEGURADO SET NOME=?, EMAIL=?, TELEFONE=? WHERE idFormularioSegurado=?";
-        save(update, f.getNomeFormularioSegurado(),f.getTelefoneFormularioSegurado(),f.getTelefoneFormularioSegurado()
+        save(update, f.getNomeFormularioSegurado(),f.getEmailFormularioSegurado(),f.getTelefoneFormularioSegurado()
         ,f.getIdFormularioSegurado());
     }
 

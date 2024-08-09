@@ -87,7 +87,7 @@ public class FormularioSeguradoControlador extends HttpServlet {
         request.setAttribute("nomeFormularioSegurado", nomeFormularioSegurado);
         request.setAttribute("emailFormularioSegurado", emailFormularioSegurado);
         request.setAttribute("telefoneFormularioSegurado", telefoneFormularioSegurado);
-        request.setAttribute("mensagem", "Edite os dados e clique em salvar");
+        //request.setAttribute("mensagem", "Edite os dados e clique em salvar");
         encaminharParaPagina(request, response);
     }
 
@@ -108,13 +108,12 @@ public class FormularioSeguradoControlador extends HttpServlet {
         try {
             validaCampos(); 
 
-            FormularioSegurado formularioSegurado1 = new FormularioSegurado();
-            formularioSegurado1.setIdFormularioSegurado(parseInt(request.getParameter("idFormularioSegurado")));
-            formularioSegurado1.setNomeFormularioSegurado(request.getParameter("nomeFormularioSegurado"));
-            formularioSegurado1.setEmailFormularioSegurado(request.getParameter("emailFormularioSegurado"));
-            formularioSegurado1.setTelefoneFormularioSegurado(request.getParameter("telefoneFormularioSegurado"));
+            formularioSegurado.setIdFormularioSegurado(Integer.valueOf(idFormularioSegurado));
+            formularioSegurado.setNomeFormularioSegurado(nomeFormularioSegurado);
+            formularioSegurado.setEmailFormularioSegurado(emailFormularioSegurado);
+            formularioSegurado.setTelefoneFormularioSegurado(telefoneFormularioSegurado);
             
-            formularioSeguradoDao.alterar(formularioSegurado1);
+            formularioSeguradoDao.alterar(formularioSegurado);
             cancelar(request, response);
         } catch (IllegalArgumentException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Erro na validação dos campos: " + e.getMessage());
@@ -129,8 +128,12 @@ public class FormularioSeguradoControlador extends HttpServlet {
     }
     
     private void confirmarExcluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        formularioSegurado.setIdFormularioSegurado(Integer.valueOf(request.getParameter("idFormularioSegurado")));
+        formularioSegurado.setIdFormularioSegurado(Integer.valueOf(idFormularioSegurado));
+        formularioSegurado.setNomeFormularioSegurado(nomeFormularioSegurado);
+        formularioSegurado.setEmailFormularioSegurado(emailFormularioSegurado);
+        formularioSegurado.setTelefoneFormularioSegurado(telefoneFormularioSegurado);
         formularioSeguradoDao.excluir(formularioSegurado);
+        
         cancelar(request, response);
     }
 

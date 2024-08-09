@@ -59,7 +59,7 @@ CREATE TABLE `cidade` (
   `nome` varchar(50) NOT NULL,
   `uf` varchar(50) NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `segurado` (
   KEY `fk_idVeiculo` (`fk_idVeiculo`),
   CONSTRAINT `fk_idBonus` FOREIGN KEY (`fk_idBonus`) REFERENCES `bonus` (`idBonus`),
   CONSTRAINT `fk_idVeiculo` FOREIGN KEY (`fk_idVeiculo`) REFERENCES `veiculo` (`idveiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,6 +141,30 @@ CREATE TABLE `seguradora` (
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idSeguradora`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `seguro`
+--
+
+DROP TABLE IF EXISTS `seguro`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `seguro` (
+  `idSeguro` int NOT NULL AUTO_INCREMENT,
+  `tipoSeguro` varchar(100) DEFAULT NULL,
+  `inicioVigenciaSeguro` date DEFAULT NULL,
+  `fimVigenciaSeguro` date DEFAULT NULL,
+  `assistenciaSeguro` varchar(100) DEFAULT NULL,
+  `valorSeguro` double DEFAULT NULL,
+  `fkIdSeguradoSeguro` int DEFAULT NULL,
+  `fkIdVeiculoSeguro` int DEFAULT NULL,
+  PRIMARY KEY (`idSeguro`),
+  KEY `fkIdSeguradoSeguro` (`fkIdSeguradoSeguro`),
+  KEY `fkIdVeiculoSeguro` (`fkIdVeiculoSeguro`),
+  CONSTRAINT `seguro_ibfk_1` FOREIGN KEY (`fkIdSeguradoSeguro`) REFERENCES `segurado` (`idSegurado`),
+  CONSTRAINT `seguro_ibfk_2` FOREIGN KEY (`fkIdVeiculoSeguro`) REFERENCES `veiculo` (`idveiculo`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,6 +188,10 @@ CREATE TABLE `veiculo` (
   PRIMARY KEY (`idveiculo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database 'estudocaso3sistema'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -174,4 +202,4 @@ CREATE TABLE `veiculo` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-06 18:03:37
+-- Dump completed on 2024-08-09 18:36:01
