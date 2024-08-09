@@ -64,7 +64,7 @@ public class FuncionarioControlador extends HttpServlet {
                 case "confirmarExcluir":  confirmarExcluir(request, response); break;
                 case "cancelar":  cancelar(request, response); break;
                 default:
-                    throw new IllegalArgumentException("Opção inválida"+opcao);
+                    throw new IllegalArgumentException("Opção inválida "+opcao);
             }
           
 

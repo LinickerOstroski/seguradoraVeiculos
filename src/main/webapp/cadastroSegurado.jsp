@@ -21,7 +21,7 @@
         <h1>Cadastro Segurado</h1>
         <form id="cadastroForm" name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador" method="get">
             <input type="hidden" name="opcao" value="${opcao}" />
-            <input type="hidden" name="codigoSegurado" value="${codigoSegurado}" />
+            <input type="hidden" name="idSegurado" value="${idSegurado}" />
             <p><label>Nome:</label> <input type="text" name="nomeSegurado" value="${nomeSegurado}" size="40" /> </p>
             <p><label>Data de Nascimento:</label> <input type="date" name="dataNascimentoSegurado" value="${dataNascimentoSegurado}"  /> </p>
             <p><label>CEP:</label> <input type="text" name="cepSegurado" value="${cepSegurado}" size="20" /></p>
@@ -34,10 +34,10 @@
 
             
             <p><label>Bonus:</label>
-                <select name="fkIdBonus">
+                <select name="bonusSegurado">
                     <c:forEach var="bonus" items="${bonuses}">
                         <c:choose>
-                            <c:when test="${bonus.idBonus eq fkIdBonusSegurado}">
+                            <c:when test="${bonus.idBonus eq bonusSegurado}">
                                 <option selected value="${bonus.idBonus}">${bonus.descricaoBonus}</option>
                             </c:when>
                             <c:otherwise>
@@ -47,11 +47,12 @@
                     </c:forEach>
                 </select>
             </p>
+            
             <p><label>Veículo:</label>
-                <select name="fkIdVeiculo">
+                <select name="veiculoSegurado">
                     <c:forEach var="veiculo" items="${veiculos}">
                         <c:choose>
-                            <c:when test="${veiculo.idVeiculo eq fkIdVeiculoSegurado}">
+                            <c:when test="${veiculo.idVeiculo eq veiculoSegurado}">
                                 <option selected value="${veiculo.idVeiculo}">${veiculo.placaVeiculo}</option>
                             </c:when>
                             <c:otherwise>
@@ -84,6 +85,8 @@
                     <th>Endereço</th>
                     <th>Bairro</th>
                     <th>Cidade</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
                     <th>Bonus</th>
                     <th>Veículo</th>
                     <th>Alterar</th>
@@ -95,32 +98,53 @@
                 <tr>
                     <td>${segurado.idSegurado}</td>
                     <td>${segurado.nomeSegurado}</td>
-                    <td>${segurado.dataNascimentoSegurado}</td>
+                    <td>${segurado.nascimentoFormatado}</td>
                     <td>${segurado.cepSegurado}</td>
                     <td>${segurado.estadoSegurado}</td>
                     <td>${segurado.enderecoSegurado}</td>
                     <td>${segurado.bairroSegurado}</td>
                     <td>${segurado.cidadeSegurado}</td>
+                    <td>${segurado.telefoneSegurado}</td>
+                    <td>${segurado.emailSegurado}</td>
+                    <td>${segurado.bonusSegurado.descricaoBonus}</td>
+                    <td>${segurado.veiculoSegurado.placaVeiculo}</td>
+                    
+                    
                     <td>
                         <form name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador" method="get">
-                            <input type="hidden" name="codigoSegurado" value="${segurado.idSegurado}" >
+                            <input type="hidden" name="idSegurado" value="${segurado.idSegurado}" >
                             <input type="hidden" name="nomeSegurado" value="${segurado.nomeSegurado}" >
-                            <input type="hidden" name="dataNascimentoSegurado" value="${segurado.dataNascimentoSegurado}">
+                            <input type="hidden" name="dataNascimentoSegurado" value="${segurado.nascimentoFormatado}">
                             <input type="hidden" name="cepSegurado" value="${segurado.cepSegurado}" >
                             <input type="hidden" name="estadoSegurado" value="${segurado.estadoSegurado}" >
                             <input type="hidden" name="enderecoSegurado" value="${segurado.enderecoSegurado}" >
                             <input type="hidden" name="bairroSegurado" value="${segurado.bairroSegurado}" >
                             <input type="hidden" name="cidadeSegurado" value="${segurado.cidadeSegurado}" >
+                            <input type="hidden" name="telefoneSegurado" value="${segurado.telefoneSegurado}" >
+                            <input type="hidden" name="emailSegurado" value="${segurado.emailSegurado}" >
+                            <input type="hidden" name="bonusSegurado" value="${segurado.bonusSegurado.idBonus}" >
+                            <input type="hidden" name="veiculoSegurado" value="${segurado.veiculoSegurado.idVeiculo}" >
                             <input type="hidden" name="opcao" value="editar" >
                             <button type="submit">Editar</button>
                         </form>    
                     </td>
                     <td>
-                        <form name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador" method="get">
-                            <input type="hidden" name="codigoSegurado" value="${segurado.idSegurado}" >
+                          <form name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador" method="get">
+                            <input type="hidden" name="idSegurado" value="${segurado.idSegurado}" >
+                            <input type="hidden" name="nomeSegurado" value="${segurado.nomeSegurado}" >
+                            <input type="hidden" name="dataNascimentoSegurado" value="${segurado.nascimentoFormatado}">
+                            <input type="hidden" name="cepSegurado" value="${segurado.cepSegurado}" >
+                            <input type="hidden" name="estadoSegurado" value="${segurado.estadoSegurado}" >
+                            <input type="hidden" name="enderecoSegurado" value="${segurado.enderecoSegurado}" >
+                            <input type="hidden" name="bairroSegurado" value="${segurado.bairroSegurado}" >
+                            <input type="hidden" name="cidadeSegurado" value="${segurado.cidadeSegurado}" >
+                            <input type="hidden" name="telefoneSegurado" value="${segurado.telefoneSegurado}" >
+                            <input type="hidden" name="emailSegurado" value="${segurado.emailSegurado}" >
+                            <input type="hidden" name="bonusSegurado" value="${segurado.bonusSegurado.idBonus}" >
+                            <input type="hidden" name="veiculoSegurado" value="${segurado.veiculoSegurado.idVeiculo}" >
                             <input type="hidden" name="opcao" value="excluir" >
                             <button type="submit">Excluir</button>
-                        </form>    
+                        </form>   
                     </td>
                 </tr>
             </c:forEach>

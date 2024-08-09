@@ -1,5 +1,6 @@
 package com.mycompany.seguradora.modelo.entidade;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,10 +18,30 @@ public class Segurado {
     private String emailSegurado;
     private Integer fkIdBonusSegurado;
     private Integer fkIdVeiculoSegurado;
+    private Veiculo veiculoSegurado = new Veiculo();
+    private Bonus bonusSegurado = new Bonus();
 
     public Segurado() {
 
     }
+
+    public Veiculo getVeiculoSegurado() {
+        return veiculoSegurado;
+    }
+
+    public void setVeiculoSegurado(Veiculo veiculoSegurado) {
+        this.veiculoSegurado = veiculoSegurado;
+    }
+
+    public Bonus getBonusSegurado() {
+        return bonusSegurado;
+    }
+
+    public void setBonusSegurado(Bonus bonusSegurado) {
+        this.bonusSegurado = bonusSegurado;
+    }
+
+   
 
     public Segurado(String nomeSegurado, Calendar dataNascimentoSegurado, String cepSegurado, String estadoSegurado, String enderecoSegurado, String bairroSegurado, String cidadeSegurado, String telefoneSegurado, String emailSegurado, Integer fkIdBonusSegurado, Integer fkIdVeiculoSegurado) {
         this.nomeSegurado = nomeSegurado;
@@ -130,5 +151,10 @@ public class Segurado {
 
     public void setFkIdVeiculoSegurado(Integer fkIdVeiculoSegurado) {
         this.fkIdVeiculoSegurado = fkIdVeiculoSegurado;
+    }
+    
+     public String getNascimentoFormatado() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(dataNascimentoSegurado.getTime());
     }
 }

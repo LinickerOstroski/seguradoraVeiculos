@@ -5,7 +5,7 @@
 <%@page import="com.mycompany.seguradora.modelo.entidade.Cidade"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="menu.jsp" %>
+<%@include file="index.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +24,10 @@
                 <p><label>Nome:</label> <input type="text" name="nomeFuncionario" value="${nomeFuncionario}" size="40" /> </p>
                 <p><label>Salário:</label> <input type="number" name="salarioFuncionario" value="${salarioFuncionario}" size="10" /> </p>
                 <p><label>Nascimento:</label> <input type="date" name="nascimentoFuncionario" value="${nascimentoFuncionario}"  /> </p>
+                
+                
+                
+                
                 <p><label>Cidade:</label>
                     <select name="cidadeFuncionario">
                      <c:forEach var="cidade" items="${cidades}">

@@ -13,13 +13,13 @@ public class SeguradoDao extends GenericoDao<Segurado> {
     public void salvar(Segurado s) {
         String insert = "INSERT INTO SEGURADO(nome, dataNascimento, cep, estado, endereco, bairro, cidade, telefone, email, fk_idBonus, fk_idVeiculo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         save(insert, s.getNomeSegurado(), convertCalendarToSqlDate(s.getDataNascimentoSegurado()), s.getCepSegurado(), s.getEstadoSegurado(), s.getEnderecoSegurado(), s.getBairroSegurado(),
-                s.getCidadeSegurado(), s.getTelefoneSegurado(), s.getEmailSegurado(), s.getFkIdBonusSegurado(), s.getFkIdVeiculoSegurado());
+                s.getCidadeSegurado(), s.getTelefoneSegurado(), s.getEmailSegurado(), s.getBonusSegurado().getIdBonus(), s.getVeiculoSegurado().getIdVeiculo());
     }
 
     public void alterar(Segurado s) {
         String update = "UPDATE SEGURADO SET nome=?, dataNascimento=?, cep=?, estado=?, endereco=?, bairro=?, cidade=?, telefone=?, email=?, fk_idBonus=?, fk_idVeiculo=? WHERE idSegurado=?";
         save(update, s.getNomeSegurado(), convertCalendarToSqlDate(s.getDataNascimentoSegurado()), s.getCepSegurado(), s.getEstadoSegurado(), s.getEnderecoSegurado(), s.getBairroSegurado(),
-                s.getCidadeSegurado(), s.getTelefoneSegurado(), s.getEmailSegurado(), s.getFkIdBonusSegurado(), s.getFkIdVeiculoSegurado(), s.getIdSegurado());
+                s.getCidadeSegurado(), s.getTelefoneSegurado(), s.getEmailSegurado(),s.getBonusSegurado().getIdBonus(), s.getVeiculoSegurado().getIdVeiculo(), s.getIdSegurado());
     }
 
     public void excluir(Segurado s) {
@@ -67,8 +67,9 @@ public class SeguradoDao extends GenericoDao<Segurado> {
             segurado.setCidadeSegurado(rs.getString("cidade"));
             segurado.setTelefoneSegurado(rs.getString("telefone"));
             segurado.setEmailSegurado(rs.getString("email"));
-            segurado.setFkIdBonusSegurado(rs.getInt("fk_idBonus"));
-            segurado.setFkIdVeiculoSegurado(rs.getInt("fk_idVeiculo"));
+            segurado.setBonusSegurado(bonusDao.buscarPorId(rs.getInt("fk_idBonus")));
+            segurado.setVeiculoSegurado(veiculoDao.buscarPorId(rs.getInt("fk_idVeiculo")));
+            
             return segurado;
         }
     }

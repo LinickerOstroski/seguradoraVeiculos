@@ -54,7 +54,6 @@ public class Funcionario {
      public String getNascimentoFormatado() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return sdf.format(nascimentoFuncionario.getTime());
-
     }
     
     
