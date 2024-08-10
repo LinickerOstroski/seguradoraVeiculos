@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Nunito, Verdana;
+}
+
+.center{
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 2%;
+}
+
+header{
+    padding:40px 0;
+}
+
+.logo{
+    width:50%;
+}
+
+.menu{
+    padding-top:10px;
+    width: 50%;
+    text-align: right;
+}
+
+.menu a{
+    color: black;
+    margin-right: 20px;
+    font-size: 12px;
+    text-decoration: none; 
+    transition: font-size 0.2s;
+}
+
+.menu a:hover {
+    color: gray;
+    font-size: 14px;
+    
+}
+
+.home{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Alinha todos os itens no final do contêiner */
+    position: relative; /* Define o contêiner pai como relativo para permitir posicionamento absoluto dos filhos, se necessário */
+}
+
+.textoHome{
+    transform: scale(0.75);
+    text-align: left;
+    margin-right: -240px;
+    margin-top: 20px;
+}
+
+.botaoHome {
+    display: inline-block; /* Faz o botão se ajustar ao tamanho do seu conteúdo */
+    background-color: rgb(27,77,227); /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 30px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno (vertical | horizontal) */
+    font-size: 12px; /* Tamanho pequeno do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    text-decoration: none; /* Remove o sublinhado, se for um link */
+    transform: scale(1.75); /* Ajuste o tamanho do botão se necessário */
+    margin-left: 50px;
+    margin-top: 40px;
+    cursor: pointer; /* Adiciona um cursor pointer para indicar que é clicável */
+    transition: background-color 0.1s; /* Transição suave para alterações de cor */
+}
+
+.botaoHome:hover {
+    background-color: #0056b3; /* Cor de fundo azul mais escuro ao passar o mouse */
+}
+
+
+
+
+.carro{
+    transform: scale(0.75);
+    text-align: right;
+    margin-right: -120px;
+    margin-top: 20px;
+}
+
+
+.outros{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinha todos os itens no final do contêiner */
+    position: relative; /* Define o contêiner pai como relativo para permitir posicionamento absoluto dos filhos, se necessário */
+}
+
+
+.imagemOutros{
+    transform: scale(0.65);
+    margin-top: 30px;
+    margin-right: 45px;
+}
+
+.compromisso{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinha todos os itens no final do contêiner */
+    position: relative; /* Define o contêiner pai como relativo para permitir posicionamento absoluto dos filhos, se necessário */
+
+}
+
+.imagemCompromisso{
+    transform: scale(0.65);
+    margin-top: 30px;
+    margin-right: 45px;
+}
