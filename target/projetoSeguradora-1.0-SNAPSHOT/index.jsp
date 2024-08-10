@@ -30,18 +30,15 @@
             <div class = "center">
                 <div class = "logo"> <img src="${pageContext.request.contextPath}/images/Logo.png" alt="Logo"></div>
                 <div class = "menu">
-                    <a href="#">Serviços</a>
-                    <a href="#">Benefícios</a>
-                    <a href="#">Depoimentos</a>
-                    <a href="#">Contato</a>
-                    <a href="#">FAQ</a>
-                    <a href="${pageContext.request.contextPath}/paginaLogin.jsp">Área Restrita</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#home">Contato</a>
+                    <a href="${pageContext.request.contextPath}/paginaLogin.jsp" class= "areaRestrita">Área Restrita</a>
                     
                 </div>
                     <div class="barra-horizontal"></div>    
             </div>
         </header>
-        <section class = "home">
+        <section id = "home" class = "home">
             
             <div class = "textoHome">
                 <img src="${pageContext.request.contextPath}/images/TextoHome.png" alt="Ellipse">
@@ -62,7 +59,7 @@
 
                 
                 
-        <section class = "outros">
+        <section id = "servicos"class = "outros">
             
             <div class = "imagemOutros">
                 <img src="${pageContext.request.contextPath}/images/Outros.png" alt="Informações">

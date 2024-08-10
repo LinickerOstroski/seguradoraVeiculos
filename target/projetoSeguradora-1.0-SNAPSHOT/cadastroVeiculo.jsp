@@ -20,20 +20,20 @@
 
 
     <body>
-        <h1>Cadastro Veiculo</h1>
+        <h1>Cadastro de Veiculo</h1>
         <div>
             <form id="cadastroForm" name="cadastroForm" action="${pageContext.request.contextPath}${URL_BASE}/VeiculoControlador" method="get">
                 <input type="hidden" name="opcao" value="${opcao}" />
                 <input type="hidden" name="idVeiculo" value="${idVeiculo}" />
-                <p><label>Placa:</label> <input type="text" name="placaVeiculo" value="${placaVeiculo}" size="40" /> </p>
-                <p><label>Marca:</label> <input type="text" name="marcaVeiculo" value="${marcaVeiculo}" size="40" /> </p>
-                <p><label>Modelo:</label> <input type="text" name="modeloVeiculo" value="${modeloVeiculo}" size="40" /> </p>
-                <p><label>Ano:</label> <input type="text" name="anoVeiculo" value="${anoVeiculo}" size="40" /> </p>
-                <p><label>Chassi:</label> <input type="text" name="chassiVeiculo" value="${chassiVeiculo}" size="40" /> </p>
-                <p><label>Capacidade:</label> <input type="text" name="capacidadeVeiculo" value="${capacidadeVeiculo}" size="40" /> </p>
+                <p><label>Placa do Veículo:</label> <input type="text" name="placaVeiculo" value="${placaVeiculo}" size="40" /> </p>
+                <p><label>Fabricante do Veículo:</label> <input type="text" name="marcaVeiculo" value="${marcaVeiculo}" size="40" /> </p>
+                <p><label>Modelo do Veículo:</label> <input type="text" name="modeloVeiculo" value="${modeloVeiculo}" size="40" /> </p>
+                <p><label>Ano do Veículo:</label> <input type="text" name="anoVeiculo" value="${anoVeiculo}" size="40" /> </p>
+                <p><label>Chassi do Veículo:</label> <input type="text" name="chassiVeiculo" value="${chassiVeiculo}" size="40" /> </p>
+                <p><label>Capacidade total:</label> <input type="text" name="capacidadeVeiculo" value="${capacidadeVeiculo}" size="40" /> </p>
                 <p><label>Categoria:</label> <input type="text" name="categoriaVeiculo" value="${categoriaVeiculo}" size="40" /> </p>
-                <p><label>Cor:</label> <input type="text" name="corVeiculo" value="${corVeiculo}" size="40" /> </p>
-                <p><label>Fipe:</label> <input type="text" name="fipeVeiculo" value="${fipeVeiculo}" size="40" /> </p>
+                <p><label>Cor predominante</label> <input type="text" name="corVeiculo" value="${corVeiculo}" size="40" /> </p>
+                <p><label>Tabela fipe:</label> <input type="text" name="fipeVeiculo" value="${fipeVeiculo}" size="40" /> </p>
                 <td> 
                     <input type="submit" name="Salvar" value="Salvar"  /> 
                 </td>

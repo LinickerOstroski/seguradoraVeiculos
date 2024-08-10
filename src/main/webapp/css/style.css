@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: Nunito, Verdana;
+    font-family: sans-serif, Verdana;
 }
 
 .center{
@@ -55,6 +55,11 @@ header{
     margin-top: 20px;
 }
 
+.areaRestrita{
+    background-color: rgb(27,77,227); /* Cor de fundo azul */
+    font-size: 14px; 
+}
+
 .botaoHome {
     display: inline-block; /* Faz o botão se ajustar ao tamanho do seu conteúdo */
     background-color: rgb(27,77,227); /* Cor de fundo azul */
@@ -75,8 +80,6 @@ header{
 .botaoHome:hover {
     background-color: #0056b3; /* Cor de fundo azul mais escuro ao passar o mouse */
 }
-
-
 
 
 .carro{
