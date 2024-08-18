@@ -8,22 +8,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content = "width=device-width,initial-scale=1.0,maximum-scale=1.0">
          
-        
         <title>Barra Horizontal Fina</title>
         <style>
+            
         .barra-horizontal {
             height: 1px; /* Altura da barra */
             width: 100%; /* Largura da barra */
             background-color: #ccc; /* Cor da barra */
             margin-top: 30px;
         }
+        
         </style>
-        
-        
-        
-        
-        
-        
     </head>
     <body>
         <header>
@@ -55,10 +50,6 @@
               
                 
         </section >
-                        
-
-                
-                
         <section id = "servicos"class = "outros">
             
             <div class = "imagemOutros">

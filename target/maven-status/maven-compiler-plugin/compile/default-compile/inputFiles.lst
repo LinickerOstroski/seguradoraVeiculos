@@ -6,6 +6,7 @@ C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\segur
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\controlador\SeguradoControlador.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\controlador\SeguradoraControlador.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\controlador\SeguroControlador.java
+C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\controlador\SinistroControlador.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\controlador\VeiculoControlador.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\JakartaRestConfiguration.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\AssistenciaDao.java
@@ -19,6 +20,7 @@ C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\segur
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\SeguradoDao.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\SeguradoraDao.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\SeguroDao.java
+C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\SinistroDao.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\dao\VeiculoDao.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\entidade\Assistencia.java
 C:\Users\Iksortso K2\Desktop\projetoSeguradora\src\main\java\com\mycompany\seguradora\modelo\entidade\Bonus.java

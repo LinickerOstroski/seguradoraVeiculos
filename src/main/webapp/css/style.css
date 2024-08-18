@@ -54,11 +54,25 @@ header{
     margin-right: -240px;
     margin-top: 20px;
 }
-
-.areaRestrita{
-    background-color: rgb(27,77,227); /* Cor de fundo azul */
+.areaRestrita {
+    background-color: white; /* Cor de fundo branca */
     font-size: 14px; 
+    color: rgb(27, 77, 227); /* Cor do texto azul */
+    border: 1px solid rgb(27, 77, 227); /* Borda azul fina */
+    border-radius: 15%; /* Faz o botão circular */
+    padding: 5px 10px; /* Ajuste o padding para definir o tamanho do botão */
+    text-align: center; /* Centraliza o texto */
+    display: inline-block; /* Garante que o botão tenha a largura do conteúdo */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    line-height: 1.5; /* Ajusta a altura da linha para melhor alinhamento do texto */
+    box-shadow: 0 0 0 2px rgb(27, 77, 227); /* Adiciona uma borda azul fina ao redor do botão */
 }
+
+.areaRestrita:hover {
+     border: 1px solid rgb(37, 87, 237); /* Borda azul fina */
+}
+
+
 
 .botaoHome {
     display: inline-block; /* Faz o botão se ajustar ao tamanho do seu conteúdo */

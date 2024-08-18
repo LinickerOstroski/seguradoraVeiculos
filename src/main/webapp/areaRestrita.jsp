@@ -112,6 +112,7 @@
             <li><a href="${pageContext.request.contextPath}${URL_BASE}/BonusControlador?opcao=cancelar">Bônus</a></li>
             <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguradoControlador?opcao=cancelar">Segurado</a></li>
             <li><a href="${pageContext.request.contextPath}${URL_BASE}/SeguroControlador?opcao=cancelar">Seguro</a></li>
+             <li><a href="${pageContext.request.contextPath}${URL_BASE}/SinistroControlador?opcao=cancelar">Sinistro</a></li>
         </ul>
     </nav>
     

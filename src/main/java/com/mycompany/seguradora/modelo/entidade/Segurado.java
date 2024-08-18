@@ -16,8 +16,12 @@ public class Segurado {
     private String cidadeSegurado;
     private String telefoneSegurado;
     private String emailSegurado;
+    
+    
+    
     private Integer fkIdBonusSegurado;
     private Integer fkIdVeiculoSegurado;
+    
     private Veiculo veiculoSegurado = new Veiculo();
     private Bonus bonusSegurado = new Bonus();
 
